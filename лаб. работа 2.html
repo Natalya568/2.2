@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.5.1.js"></script>
+        <script>
+	var n;
+        var color = "#556B2F";
+            function speed(){
+                n = parseInt($("#speed").val(), 10);
+               // console.log(n)
+            }
+
+            $(document).ready(function(){
+		$("#btn1").click(function(){
+			$("#txt").animate({width: '500px'},n);
+                });
+
+		$("#btn2").click(function(){
+			$("#txt").animate({width: '50px'},n);
+                });
+
+                $('#txt').css('backgroundColor', color);
+            });
+
+
+	var transparent = false;
+	$(document).ready(function(){
+		$("#btn3").click(function(){
+			if(transparent) {
+				$("#txt").animate({opacity: '100%'});
+			} else {
+				$("#txt").animate({opacity: '40%'});
+			}
+			transparent = !transparent;
+		});
+	});
+	</script>
+    </head>
+
+    <body>
+	<div id="2">Выбор параметров: </div>
+	<br>
+        <button id="btn1">Широкий</button>
+	<br><br>
+        <button id="btn2">Узкий</button>
+	<br><br>
+	<input type="checkbox" id="btn3"/>
+	<label for = "btn3">Прозрачный</label>
+	<br><br>
+        <div id="txt" style="height:250px; width:250px;"></div>
+    </body>
+</html>
